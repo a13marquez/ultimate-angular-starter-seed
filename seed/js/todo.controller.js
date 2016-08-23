@@ -16,6 +16,7 @@
     }];
     self.addTodo = addTodo;
     self.removeTodo = removeTodo;
+    self.getRemaining = getRemaining;
 
     function addTodo (){
       self.list.unshift({
@@ -29,6 +30,11 @@
       self.list.splice(index, 1);
     }
 
+    function getRemaining(){
+      return self.list.filter(function (item){
+        return !item.completed
+      })
+    }
 
   }
 

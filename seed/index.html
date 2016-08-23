@@ -30,6 +30,14 @@
           </a>
         </li>
       </ul>
+      <p class="todo__remaining">
+        <span data-ng-hide="todo.getRemaining().length === 0">
+          Tienes {{ todo.getRemaining().length }} de {{ todo.list.length }} tareas
+        </span>
+        <span data-ng-show="todo.getRemaining().length === 0">
+          Eres super productivo!!!
+        </span>
+      </p>
     </div>
     <script src="js/app.js"></script>
     <script src="js/todo.controller.js"></script>
