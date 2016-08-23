@@ -7,10 +7,10 @@
       title:'Primera tarea',
       completed: false
     },{
-      title:'Primera tarea',
+      title:'Segunda tarea',
       completed: false
     },{
-      title:'Primera tarea',
+      title:'Tercera tarea',
       completed: false
     }]
   }
