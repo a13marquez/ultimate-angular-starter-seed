@@ -9,13 +9,25 @@
   </head>
   <body>
     <div class="todo" data-ng-controller="TodoController as todo">
+      <form class="todo__form" data-ng-submit="todo.addTodo();">
+        <input type="text" placeholder="Añadir nueva tarea" data-ng-model="todo.newTodo">
+      </form>
       <ul class="todo__list">
         <li data-ng-repeat="item in todo.list">
           <input type="checkbox" id="todo-{{ $index }}" data-ng-model="item.completed">
           <label class="toggle" for="todo-{{ $index }}"></label>
-          <p>
+          <p data-ng-dblclick="showEditField = true" data-ng-hide="showEditField">
             {{item.title}}
           </p>
+          <div data-ng-show="showEditField">
+            <input
+              type="text"
+              data-ng-model="item.title"
+              data-ng-blur="showEditField = false">
+          </div>
+          <a href="" data-ng-click="todo.removeTodo(item, $index)">
+            &#215;
+          </a>
         </li>
       </ul>
     </div>
