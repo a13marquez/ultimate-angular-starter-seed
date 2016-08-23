@@ -1,4 +1,5 @@
-(function{
+(function(){
+  'use strict'
   function TodoController(){
     var self = this;
 
@@ -13,7 +14,7 @@
       completed: false
     }]
   }
-  app
+  angular
     .module('app')
     .controller('TodoController', TodoController)
 })();
